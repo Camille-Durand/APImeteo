@@ -21,4 +21,35 @@ const apiMeteo = fetch(url)
                         infos[2].textContent = "Town: " + town;
                         infos[3].textContent = "Latitude: " + lat;
                         infos[4].textContent = "Longitude: " + long;
+
+                        let imgMeteo = document.querySelectorAll('img');
+                        switch(json.weather[0].description) {
+                            case "clear sky":
+                                imgMeteo[0].src = "https://openweathermap.org/img/wn/01d@2x.png";
+                                break;
+                            case "few clouds":
+                                imgMeteo[0].src = "https://openweathermap.org/img/wn/02d@2x.png";
+                                break;
+                            case "scattered clouds":
+                                imgMeteo[0].src = "https://openweathermap.org/img/wn/03d@2x.png";
+                                break;
+                            case "broken clouds":
+                                imgMeteo[0].src = "https://openweathermap.org/img/wn/04d@2x.png";
+                                break;
+                            case "shower rain":
+                                imgMeteo[0].src = "https://openweathermap.org/img/wn/09d@2x.png";
+                                break;
+                            case "rain":
+                                imgMeteo[0].src = "https://openweathermap.org/img/wn/10d@2x.png";
+                                break;
+                            case "thunderstorm":
+                                imgMeteo[0].src = "https://openweathermap.org/img/wn/11d@2x.png";
+                                break;
+                            case "snow":
+                                imgMeteo[0].src = "https://openweathermap.org/img/wn/13d@2x.png";
+                                break;
+                            case "mist":
+                                imgMeteo[0].src = "https://openweathermap.org/img/wn/50d@2x.png";
+                                break;
+                        }
                     });
